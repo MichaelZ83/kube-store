@@ -1,0 +1,20 @@
+name: Github Actions Template
+
+on: push
+ 
+jobs:
+  build:
+    name: Build Job
+    runs-on: ubuntu-latest
+    environment: staging
+    env:
+      SPN_ID: ${{ secrets.SPN_ID }}
+      SPN_PASS: ${{ secrets.SPN_PASS }}
+    steps:
+    - name: Connecting to Azure
+      run: |
+        echo $SPN_PASS
+
+
+  
+  
